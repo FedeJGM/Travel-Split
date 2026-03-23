@@ -1,0 +1,140 @@
+/* Estilos de botones */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Botón primario */
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #3a86ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(72, 149, 239, 0.3);
+}
+
+/* Botón outline */
+.btn-outline {
+    background: transparent;
+    border: 2px solid currentColor;
+    color: white;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* En header, el outline es blanco */
+.header .btn-outline {
+    color: white;
+    border-color: white;
+}
+
+/* Fuera del header, el outline usa el color primario */
+.btn-outline:not(.header .btn-outline) {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-outline:not(.header .btn-outline):hover {
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+/* Botón peligro */
+.btn-danger {
+    background-color: var(--danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d62828;
+    transform: translateY(-2px);
+}
+
+/* Tamaños de botones */
+.btn-small {
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size-sm);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: var(--font-size-lg);
+}
+
+/* Botón con ancho completo */
+.btn-block {
+    width: 100%;
+}
+
+/* Botón deshabilitado */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Botón eliminar dentro de tags */
+.btn-eliminar,
+.btn-remove {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    transition: transform var(--transition-fast);
+}
+
+.btn-eliminar:hover,
+.btn-remove:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-large {
+        padding: 0.875rem 1.5rem;
+        font-size: var(--font-size-base);
+    }
+}

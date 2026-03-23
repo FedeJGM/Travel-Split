@@ -1,0 +1,218 @@
+/* Estilos de formularios */
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: var(--font-weight-medium);
+    color: var(--dark);
+    font-size: var(--font-size-base);
+}
+
+.form-group label i {
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--gray);
+    font-size: var(--font-size-sm);
+}
+
+/* Form controls (inputs, selects, textareas) */
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-md);
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--dark);
+    background-color: white;
+    transition: border var(--transition-fast), 
+                box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.form-control::placeholder {
+    color: var(--gray);
+    opacity: 0.7;
+}
+
+/* Select específico */
+select.form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236c757d' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Textarea específico */
+textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Input con error */
+.form-control.error {
+    border-color: var(--danger);
+}
+
+.form-control.error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.2);
+}
+
+/* Input deshabilitado */
+.form-control:disabled {
+    background-color: var(--light-gray);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Participantes container */
+.participantes-container {
+    border: 1px dashed var(--light-gray);
+    border-radius: var(--border-radius-md);
+    padding: 1rem;
+    margin-top: 1rem;
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.participantes-container:empty::before {
+    content: "Los participantes aparecerán aquí...";
+    color: var(--gray);
+    opacity: 0.7;
+}
+
+/* Participante tag */
+.participante-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(67, 97, 238, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--primary);
+    transition: background-color var(--transition-fast);
+}
+
+.participante-tag:hover {
+    background-color: rgba(67, 97, 238, 0.15);
+}
+
+/* Checkboxes para participantes incluidos */
+.participantes-incluidos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.participantes-incluidos label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: var(--border-radius-sm);
+    background-color: rgba(248, 249, 250, 0.7);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.participantes-incluidos label:hover {
+    background-color: rgba(67, 97, 238, 0.1);
+}
+
+.participantes-incluidos input[type="checkbox"] {
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+/* Input con moneda */
+.currency-input {
+    display: flex;
+    align-items: center;
+}
+
+.currency-input input {
+    flex: 1;
+}
+
+.currency-input span {
+    margin-left: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--light-gray);
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-semibold);
+    color: var(--gray);
+}
+
+/* Input para agregar participantes */
+.add-participant {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.add-participant input {
+    flex: 1;
+}
+
+/* Search box */
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding-left: 2.5rem;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+}
+
+/* Form actions (botones al final del form) */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.form-actions .btn {
+    flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .participantes-incluidos {
+        grid-template-columns: 1fr;
+    }
+}
+ 

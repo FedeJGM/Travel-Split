@@ -1,0 +1,256 @@
+/* Estilos específicos de la página Detalles del Viaje */
+
+/* Header con información del viaje */
+.viaje-header-detail {
+    margin-bottom: 2rem;
+}
+
+.viaje-codigo {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-md);
+    font-family: monospace;
+    font-weight: var(--font-weight-bold);
+    margin-top: 0.5rem;
+}
+
+/* Sección de resumen */
+.resumen-section {
+    margin-bottom: 2rem;
+}
+
+.resumen-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f6f7f9, #e9ecef);
+    border-radius: var(--border-radius-lg);
+}
+
+.resumen-card h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.resumen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.resumen-item {
+    padding: 1rem;
+    background: white;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.resumen-item h3 {
+    color: var(--gray);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.5rem;
+}
+
+.resumen-item .monto {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+}
+
+.resumen-item .monto.positivo {
+    color: var(--success);
+}
+
+.resumen-item .monto.negativo {
+    color: var(--danger);
+}
+
+/* Lista de participantes */
+.participantes-section {
+    margin-bottom: 2rem;
+}
+
+.participantes-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#lista-participantes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-participantes li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+    transition: background-color var(--transition-fast);
+}
+
+#lista-participantes li:hover {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+#lista-participantes li:last-child {
+    border-bottom: none;
+}
+
+#lista-participantes li::before {
+    content: "👤";
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+/* Sección de gastos */
+.gastos-section {
+    grid-column: span 2;
+}
+
+.gastos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.gastos-header h2 {
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+#total-gastos {
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+/* Lista de gastos */
+#lista-gastos {
+    min-height: 100px;
+}
+
+.gasto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 0.75rem;
+    background-color: rgba(248, 249, 250, 0.5);
+    transition: transform var(--transition-fast), 
+                background-color var(--transition-fast);
+}
+
+.gasto-item:hover {
+    transform: translateX(5px);
+    background-color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.gasto-item h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+.gasto-info {
+    flex: 1;
+}
+
+.gasto-monto {
+    font-weight: var(--font-weight-bold);
+    color: var(--dark);
+    font-size: var(--font-size-lg);
+    text-align: right;
+}
+
+.gasto-meta {
+    display: flex;
+    gap: 1rem;
+    color: var(--gray);
+    font-size: var(--font-size-sm);
+    margin-top: 0.25rem;
+}
+
+.gasto-meta i {
+    margin-right: 0.25rem;
+}
+
+/* Empty state para gastos */
+#lista-gastos:empty::before {
+    content: "No hay gastos registrados todavía...";
+    display: block;
+    text-align: center;
+    padding: 2rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+/* Balance summary */
+.balance-summary {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--light-gray);
+}
+
+.balance-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 0.5rem;
+    background-color: rgba(248, 249, 250, 0.7);
+}
+
+.balance-item.debe {
+    border-left: 3px solid var(--danger);
+}
+
+.balance-item.recibe {
+    border-left: 3px solid var(--success);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .resumen-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .gastos-section {
+        grid-column: span 1;
+    }
+    
+    .gasto-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .gasto-monto {
+        text-align: left;
+    }
+    
+    .gastos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+ 

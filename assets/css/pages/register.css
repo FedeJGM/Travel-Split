@@ -1,0 +1,102 @@
+/* Estilos específicos de la página Register */
+
+.password-requirements {
+    margin-top: 0.75rem;
+    padding: 1rem;
+    background: #f6f8fa;
+    border: 1px solid #e1e4e8;
+    border-radius: var(--border-radius-md);
+}
+
+.requirements-title {
+    font-size: 0.85rem;
+    font-weight: var(--font-weight-semibold);
+    color: var(--dark);
+    margin: 0 0 0.5rem 0;
+}
+
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 0.4rem;
+    transition: all var(--transition-base);
+}
+
+.requirement-item:last-child {
+    margin-bottom: 0;
+}
+
+.requirement-item i {
+    font-size: 0.7rem;
+    color: #d1d5da;
+    transition: all var(--transition-base);
+}
+
+.requirement-item.requirement-valid {
+    color: var(--success);
+}
+
+.requirement-item.requirement-valid i {
+    color: var(--success);
+}
+
+.requirement-item.requirement-invalid {
+    color: var(--gray);
+}
+
+/* Estilo para mensajes de error - SIN afectar inputs */
+.error-message {
+    display: block;
+    color: var(--danger);
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+    min-height: 1rem;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Estilo para inputs con error */
+.form-control-login.input-error {
+    border: 1px solid var(--danger) !important;
+    background-color: #fff5f5 !important;
+}
+
+.form-control-login.input-error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 35, 60, 0.1) !important;
+    border-color: var(--danger) !important;
+}
+
+/* Estilo para inputs válidos */
+.form-control-login.input-valid {
+    border: 1px solid var(--success) !important;
+    background-color: #f0fdf4 !important;
+}
+
+.form-control-login.input-valid:focus {
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1) !important;
+    border-color: var(--success) !important;
+}
+
+/* Animación para los requisitos */
+@keyframes checkmarkPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.requirement-item.requirement-valid i {
+    animation: checkmarkPulse 0.3s ease;
+}

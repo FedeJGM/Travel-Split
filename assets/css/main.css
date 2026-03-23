@@ -1,0 +1,183 @@
+/**
+ * TravelSplit - Main CSS
+ * Archivo principal que importa todos los estilos en el orden correcto
+ * 
+ * Orden de carga:
+ * 1. Base (reset, variables, global)
+ * 2. Components (botones, cards, forms, header)
+ * 3. Pages (estilos específicos de cada página)
+ */
+
+/* ========================================
+   1. BASE - Estilos fundamentales
+   ======================================== */
+
+/* Reset CSS - Normaliza estilos entre navegadores */
+@import './base/reset.css';
+
+/* Variables CSS - Colores, fuentes, espaciado */
+@import './base/variables.css';
+
+/* Estilos globales - Body, containers, animaciones */
+@import './base/global.css';
+
+
+/* ========================================
+   2. COMPONENTS - Componentes reutilizables
+   ======================================== */
+
+/* Botones - Todos los estilos de botones */
+@import './components/buttons.css';
+
+/* Cards - Tarjetas y contenedores */
+@import './components/cards.css';
+
+/* Forms - Formularios, inputs, selects */
+@import './components/forms.css';
+
+/* Header - Navegación y header */
+@import './components/header.css';
+
+
+/* ========================================
+   3. PAGES - Estilos específicos de páginas
+   ======================================== */
+
+/* Home - Página principal */
+@import './pages/home.css';
+
+/* Travel Detail - Detalles del viaje */
+@import './pages/travel-detail.css';
+
+/* Travel Form - Formularios de viajes y gastos */
+@import './pages/travel-form.css';
+
+/* Travel List - Listado de viajes */
+@import './pages/travel-list.css';
+
+/* Welcome - Página de bienvenida */
+@import './pages/welcome.css';
+
+/* Login - Página de inicio de sesión */
+@import './pages/login.css';
+
+/* Register - Página de registro */
+@import './pages/register.css';
+
+/* ========================================
+   4. UTILITIES - Clases de utilidad
+   ======================================== */
+
+/* Clases de utilidad adicionales que no están en otros archivos */
+
+/* Spacing utilities */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+.text-success { color: var(--success); }
+.text-danger { color: var(--danger); }
+.text-gray { color: var(--gray); }
+
+.text-bold { font-weight: var(--font-weight-bold); }
+.text-semibold { font-weight: var(--font-weight-semibold); }
+.text-normal { font-weight: var(--font-weight-normal); }
+
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+
+/* Display utilities */
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.d-grid { display: grid; }
+
+/* Flex utilities */
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+.gap-3 { gap: 1.5rem; }
+
+/* Width utilities */
+.w-100 { width: 100%; }
+.w-auto { width: auto; }
+
+/* Border utilities */
+.border-top { border-top: 1px solid var(--light-gray); }
+.border-bottom { border-bottom: 1px solid var(--light-gray); }
+.border-left { border-left: 1px solid var(--light-gray); }
+.border-right { border-right: 1px solid var(--light-gray); }
+
+/* Shadow utilities */
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* Overflow utilities */
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+
+/* Cursor utilities */
+.cursor-pointer { cursor: pointer; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+
+/* ========================================
+   5. PRINT STYLES - Para impresión
+   ======================================== */
+
+@media print {
+    .header,
+    .btn,
+    .form-group,
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+        page-break-inside: avoid;
+    }
+}
+

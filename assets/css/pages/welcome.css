@@ -1,0 +1,133 @@
+/* Estilos específicos de la página Welcome */
+
+.welcome-page {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.welcome-content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.welcome-hero {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.welcome-subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--gray);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+}
+
+.welcome-image {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e3f2fd, #f0f4ff);
+    border-radius: var(--border-radius-lg);
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.welcome-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--border-radius-md);
+}
+
+.welcome-features {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--light-gray);
+    flex-wrap: wrap;
+}
+
+.welcome-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 120px;
+}
+
+.welcome-feature i {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.welcome-feature span {
+    font-size: var(--font-size-sm);
+    color: var(--gray);
+    font-weight: var(--font-weight-medium);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 1.8rem;
+    }
+
+    .welcome-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .welcome-hero {
+        padding: 1.5rem;
+    }
+
+    .welcome-image {
+        min-height: 250px;
+        padding: 1rem;
+    }
+
+    .welcome-features {
+        gap: 1rem;
+    }
+
+    .welcome-feature {
+        min-width: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        font-size: 1.5rem;
+    }
+
+    .welcome-image {
+        min-height: 200px;
+        padding: 0.5rem;
+    }
+
+    .welcome-features {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

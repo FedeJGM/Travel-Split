@@ -1,0 +1,190 @@
+/* Estilos de cards */
+
+.card {
+    background: white;
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-sm);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: transform var(--transition-base), 
+                box-shadow var(--transition-base);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Card con borde */
+.card-bordered {
+    border: 1px solid var(--light-gray);
+}
+
+/* Card sin hover effect */
+.card-static {
+    transition: none;
+}
+
+.card-static:hover {
+    transform: none;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Viaje card (para listado de viajes) */
+.viaje-card {
+    border: 1px solid var(--light-gray);
+    border-radius: var(--border-radius-lg);
+    padding: 1.5rem;
+    transition: all var(--transition-base);
+}
+
+.viaje-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.viaje-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.viaje-title {
+    font-size: 1.3rem;
+    color: var(--primary);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
+}
+
+.viaje-meta {
+    display: flex;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    color: var(--gray);
+    font-size: var(--font-size-sm);
+}
+
+.viaje-meta i {
+    margin-right: 0.25rem;
+}
+
+.viaje-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--light-gray);
+}
+
+/* Card de resumen (para estadísticas) */
+.resumen-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f6f7f9, #e9ecef);
+    border-radius: var(--border-radius-lg);
+}
+
+.resumen-card h3 {
+    color: var(--gray);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 0.5rem;
+}
+
+.resumen-card .monto {
+    font-size: 1.8rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-dark);
+}
+
+/* Gasto item (para lista de gastos) */
+.gasto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 0.75rem;
+    background-color: rgba(248, 249, 250, 0.5);
+    transition: transform var(--transition-fast), 
+                background-color var(--transition-fast);
+}
+
+.gasto-item:hover {
+    transform: translateX(5px);
+    background-color: white;
+    box-shadow: var(--shadow-sm);
+}
+
+.gasto-item h4 {
+    margin: 0 0 0.25rem 0;
+    color: var(--dark);
+    font-weight: var(--font-weight-semibold);
+}
+
+.gasto-info {
+    flex: 1;
+}
+
+.gasto-monto {
+    font-weight: var(--font-weight-bold);
+    color: var(--dark);
+    font-size: var(--font-size-lg);
+    text-align: right;
+}
+
+.gasto-meta {
+    display: flex;
+    gap: 1rem;
+    color: var(--gray);
+    font-size: var(--font-size-sm);
+    margin-top: 0.25rem;
+}
+
+/* Badge */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+}
+
+.badge-primary {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--primary);
+}
+
+.badge-success {
+    background-color: rgba(56, 176, 0, 0.1);
+    color: var(--success);
+}
+
+.badge-danger {
+    background-color: rgba(239, 35, 60, 0.1);
+    color: var(--danger);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        padding: 1rem;
+    }
+    
+    .viaje-card {
+        padding: 1rem;
+    }
+    
+    .gasto-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .gasto-monto {
+        text-align: left;
+    }
+}
+ 
