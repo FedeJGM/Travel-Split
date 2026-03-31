@@ -1,295 +1,258 @@
-TravelSplit
+# TravelSplit
 
 Aplicación web para organizar y dividir gastos de viajes entre grupos de amigos y familiares.
 
-TravelSplit es una Single Page Application (SPA) construida con JavaScript puro siguiendo el patrón arquitectónico Model-View-Controller (MVC). Permite a los usuarios crear viajes, registrar gastos compartidos y calcular automáticamente quién debe a quién de forma equitativa.
+TravelSplit es una Single Page Application (SPA) construida con JavaScript puro siguiendo el patrón Model-View-Controller (MVC). Permite crear viajes, registrar gastos compartidos y calcular automáticamente quién debe a quién.
 
-TABLA DE CONTENIDOS
+## Tabla de Contenidos
 
-Características
-Arquitectura
-Tecnologías
-Requisitos
-Instalación
-Uso
-Estructura del Proyecto
-Principios de Diseño
-Módulos Principales
-Flujo de Datos
-Navegación
-Persistencia
-Validaciones
-Extensibilidad
-Navegadores Soportados
-Contribución
-Licencia
+- [Características](#características)
+- [Tecnologías](#tecnologías)
+- [Requisitos](#requisitos)
+- [Instalación](#instalación)
+- [Uso](#uso)
+- [Arquitectura](#arquitectura)
+- [Validaciones](#validaciones)
+- [Principios](#principios)
+- [Notas](#notas)
+- [Autor](#autor)
 
-CARACTERÍSTICAS
+---
 
-Funcionalidades Principales:
+## Características
 
-Sistema de Autenticación: Páginas de bienvenida, login y registro de usuarios
-Creación de Viajes: Crea viajes con nombre, divisa y participantes
-Gestión de Participantes: Agrega y administra participantes en cada viaje
-Registro de Gastos: Registra gastos indicando quién pagó y quiénes participan
-Cálculo Automático: Calcula automáticamente los balances y quién debe a quién
-Códigos Únicos: Cada viaje tiene un código único para compartir y unirse
-Búsqueda: Filtra viajes por nombre o código
-Múltiples Divisas: Soporte para USD, EUR, MXN, ARS, COP, CLP, BRL, PEN
-Persistencia Local: Todos los datos se guardan localmente en el navegador
-Validaciones en Tiempo Real: Validación de email y contraseña con feedback visual inmediato
+### Funcionalidades Principales
 
-Características Técnicas:
+- **Autenticación**: Registro, login y gestión de usuarios
+- **Creación de Viajes**: Viajes con nombre, divisa y participantes personalizables
+- **Gestión de Participantes**: Agregar y administrar participantes dinámicamente
+- **Registro de Gastos**: Captura de gastos con pagador y participantes
+- **Cálculo Automático**: Balances en tiempo real y deuda entre participantes
+- **Códigos Únicos**: Comparte viajes mediante códigos alfanuméricos
+- **Búsqueda**: Filtra viajes por nombre o código
+- **Múltiples Divisas**: USD, EUR, MXN, ARS, COP, CLP, BRL, PEN
+- **Persistencia Local**: Datos guardados en localStorage del navegador
+- **Validaciones en Tiempo Real**: Feedback visual inmediato en formularios
 
-Single Page Application (SPA) con routing basado en hash
-Arquitectura MVC pura sin frameworks externos
-ES6 Modules nativos
-localStorage para persistencia de datos
-Responsive design con CSS modular
-Validaciones robustas en cliente con feedback visual
-Sin dependencias externas de JavaScript
-Sistema de navegación dinámica según el estado del usuario
+### Características Técnicas
 
-ARQUITECTURA
+- Single Page Application (SPA) con routing basado en hash
+- Arquitectura MVC pura sin frameworks externos
+- ES6 Modules nativos
+- localStorage para persistencia
+- Responsive design con CSS modular
+- Sin dependencias de JavaScript (solo Font Awesome para iconos)
 
-TravelSplit implementa una arquitectura MVC (Model-View-Controller) estricta con las siguientes capas:
+---
 
-Capas de la Arquitectura:
+## Tecnologías
 
-Models: Lógica de negocio y reglas de dominio
+| Categoría | Detalles |
+|-----------|----------|
+| **HTML** | HTML5 con estructura semántica |
+| **CSS** | CSS3 con variables y diseño modular responsive |
+| **JavaScript** | ES6+ con Modules, Classes, Arrow Functions, Destructuring |
+| **Fuentes** | Google Fonts - Poppins |
+| **Iconos** | Font Awesome 6.5.1 |
+| **Storage** | localStorage del navegador |
 
-Views: Presentación y renderizado de UI
+---
 
-Controllers: Coordinación entre Models y Views
+## Requisitos
 
-Services: Servicios auxiliares (Storage, Validation)
+### Navegadores Soportados
 
-Router: Navegación SPA basada en hash
+- Chrome / Edge v61+
+- Firefox v60+
+- Safari v11+
+- Opera v48+
 
-Utils: Utilidades puras (formatters, generators)
+### Requisitos del Sistema
 
-TECNOLOGÍAS
+- Navegador moderno con soporte ES6 Modules
+- JavaScript habilitado
+- localStorage habilitado
 
-Frontend:
+---
 
-HTML5: Estructura semántica
-CSS3: Estilos modulares con variables CSS
-JavaScript ES6+: Lógica de aplicación usando ES6 Modules, ES6 Classes, Arrow Functions, Template Literals, Destructuring y Promises
+## Instalación
+Clona el repositorio:
 
-Bibliotecas Externas (Solo UI):
+```bash
+git clone https://github.com/FedeJGM/Travel-Split.git
 
-Google Fonts: Poppins
-Font Awesome 6.5.1: Iconos
+```
 
-Almacenamiento:
+### Opción 1: Ejecuta con Live Server (Recomendado)
 
-localStorage: Persistencia de datos en cliente
+Este proyecto está diseñado para ejecutarse con **Live Server**, una extensión de Visual Studio Code que crea un servidor local en tiempo real.
 
-REQUISITOS
+#### Instalación de Live Server:
 
-Navegadores Soportados:
+1. Abre **Visual Studio Code**
+2. Ve a la sección de **Extensiones**
+3. Busca "Live Server" (creador: Ritwick Dey)
+4. Haz clic en **Instalar**
 
-Chrome y Edge versión 61 o superior
-Firefox versión 60 o superior
-Safari versión 11 o superior
-Opera versión 48 o superior
+#### ¿Cómo usar Live Server?:
 
-Requisitos del Sistema:
+1. Abre este proyecto en VS Code
+2. Haz clic derecho en el archivo `index.html`
+3. Selecciona **"Open with Live Server"**
+4. El proyecto se abrirá automáticamente en tu navegador predeterminado
+5. Los cambios se recargarán automáticamente al guardar archivos
 
-Navegador moderno con soporte para ES6 Modules
-JavaScript habilitado
-localStorage habilitado
+## Opción 2: Hosting Estático
+
+Despliega en GitHub Pages, Netlify, Vercel o Firebase Hosting
 
-INSTALACIÓN
+## Uso
 
-Opción 1: Servidor Local con Python
+### Acceder a la Aplicación
 
-Clona el repositorio, navega al directorio y ejecuta el siguiente comando: python -m http.server 8000
+1. Visualiza la página de bienvenida
+2. Click en "Iniciar Sesión" o "Crear cuenta"
+3. Completa registro con email y contraseña válidos
+4. Serás redirigido a la página principal
 
-Luego abre http://localhost:8000 en tu navegador.
+### Crear un Viaje
+1. Navega a "Crear Viaje"
+2. Ingresa nombre del viaje
+3. Selecciona divisa
+4. Agrega participantes
+5. Click en "Crear Viaje" - recibe código único
 
-Opción 2: Servidor Local con Node.js
+### Registrar un Gasto
+1. Abre detalles del viaje
+2. Click en "Nuevo Gasto"
+3. Ingresa descripción y monto
+4. Selecciona quién pagó
+5. Marca participantes del gasto
+6. Guarda el gasto
 
-Clona el repositorio, navega al directorio y ejecuta el siguiente comando: npx http-server -p 8000
+### Unirse a un Viaje
+1. Navega a "Unirse a Viaje"
+2. Ingresa código compartido
+3. Acceso inmediato a detalles y gastos
 
-Luego abre http://localhost:8000 en tu navegador.
+### Ver Balances
 
-Opción 3: Live Server en VS Code
+El sistema muestra automáticamente:
 
-Instalar la extensión Live Server en VS Code
-Abrir el proyecto en VS Code
-Hacer clic derecho en index.html y seleccionar Open with Live Server
+- Total gastado
+- Promedio por persona
+- Balance individual de cada participante
+- Historial completo de gastos
 
-Opción 4: Hosting Estático
+---
 
-Sube los archivos a cualquier servicio de hosting estático como GitHub Pages, Netlify, Vercel o Firebase Hosting.
+## Arquitectura
 
-USO
+| Capa | Responsabilidad |
+|-------|---------|
+| Models | Lógica de negocio y reglas de dominio |
+| Views | Presentación y renderizado de UI |
+| Controllers | Coordinación entre Models y Views |
+| Services | Servicios auxiliares (Storage, Validation) |
+| Router | Navegación SPA basada en hash |
+| Utils | Utilidades puras (formatters, generators) |
 
-Acceder a la Aplicación:
+---
 
-Al cargar la aplicación verás la Página de Bienvenida. Haz clic en Iniciar Sesión en el header. Si no tienes cuenta, haz clic en Crea una cuenta. Completa el formulario de registro con email y contraseña válidos. Una vez registrado o logueado serás redirigido a la página principal.
+## Validaciones
 
-Crear un Viaje:
+### Autenticación
 
-Navega a Crear Viaje. Ingresa el nombre del viaje. Selecciona la divisa. Agrega participantes uno por uno. Haz clic en Crear Viaje. Se generará un código único que puedes compartir.
+#### Email
 
-Registrar un Gasto:
+- Formato válido 
+- Campo obligatorio
+- Validación en tiempo real
 
-Entra a los Detalles del Viaje. Haz clic en Nuevo Gasto. Describe el gasto. Ingresa el monto. Selecciona quién pagó. Marca quiénes participan en el gasto. Guarda el gasto.
+#### Contraseña
 
-Unirse a un Viaje:
+- Mínimo 8 caracteres
+- Al menos 1 mayúscula (A-Z)
+- Al menos 1 minúscula (a-z)
+- Al menos 1 número (0-9)
+- Validación en tiempo real con feedback visual
 
-Navega a Unirse a Viaje. Ingresa el código del viaje que te compartieron. Accede instantáneamente a los detalles y gastos.
+#### Viajes
+- Nombre: 3-50 caracteres
+- Divisa: Una de las soportadas
+- Participantes: 1-50, sin duplicados
+- Código: Único alfanumérico
 
-Ver Balances:
+#### Gastos
+- Descripción: 3-100 caracteres
+- Monto: Mayor a 0 y menor a 1,000,000 
+- Pagador: Debe ser participante existente
+- Participantes: Mínimo 1
 
-Entra a los Detalles del Viaje. El sistema muestra automáticamente el total gastado, promedio por persona, balance de cada participante y la lista completa de gastos.
+#### Participantes
+- Nombre: 2-30 caracteres
+- Permitidos: Letras, espacios, guiones
+- Prohibidos: Números, caracteres especiales
+- Normalización: Espacios extras eliminados
+- No eliminables si tienen gastos asociados
 
-ESTRUCTURA DEL PROYECTO
+#### Feedback Visual
+- Borde verde: Campo válido
+- Borde rojo: Campo con error
+- Check verde: Requisito cumplido
+- Círculo gris: Requisito pendiente
+- Mensajes de error debajo de campos
 
-El proyecto TravelSplit contiene los siguientes directorios y archivos principales:
+---
 
-Archivos raíz: index.html que es el HTML principal, app.js como punto de entrada y README.md con la documentación.
+## Principios
 
-Directorio src contiene:
+Los principios del Desarrollo del Software aplicados a este proyecto son:
 
-Carpeta models con los archivos Travel.js, Expense.js, Participant.js e index.js
+### SOLID
 
-Carpeta views con los archivos BaseView.js, WelcomeView.js, LoginView.js, RegisterView.js, HomeView.js, CreateTravelView.js, TravelListView.js, TravelDetailView.js, ExpenseFormView.js y JoinTravelView.js. También contiene una subcarpeta components con TravelCardView.js, ExpenseItemView.js, ParticipantTagView.js, LoaderView.js e index.js
+- S - Single Responsibility: Cada clase una única responsabilidad
+- O - Open/Closed: Abierto a extensión, cerrado a modificación
+- L - Liskov Substitution: Vistas heredan de BaseView correctamente
+- I - Interface Segregation: Interfaces específicas y enfocadas
+- D - Dependency Inversion: Dependencia de abstracciones
 
-Carpeta controllers con AppController.js, WelcomeController.js, LoginController.js, RegisterController.js, HomeController.js, TravelController.js, ExpenseController.js e index.js
+### DRY
 
-Carpeta router con Router.js, routes.js e index.js
+Código reutilizable en utils y components
 
-Carpeta services con StorageService.js, ValidationService.js e index.js
+### KISS
 
-Carpeta utils con formatters.js, generators.js, navigationHelper.js e index.js
+Implementaciones simples y claras
 
-Directorio assets contiene:
+### SoC 
 
-Carpeta css con subcarpetas base que incluye reset.css, variables.css y global.css. Subcarpeta components con buttons.css, cards.css, forms.css y header.css. Subcarpeta pages con home.css, welcome.css, login.css, register.css, travel-detail.css, travel-form.css y travel-list.css. También el archivo main.css en la raíz de css.
+Separación clara de responsabilidades
 
-Carpeta img para las imágenes del proyecto.
+### Cohesión 
 
-PRINCIPIOS DE DISEÑO
+Alta - componentes relacionados
 
-Principios SOLID:
+### Acoplamiento
 
-Single Responsibility Principle: Cada clase tiene una única responsabilidad
-Open/Closed Principle: Abierto a extensión, cerrado a modificación
-Liskov Substitution Principle: Las vistas heredan de BaseView correctamente
-Interface Segregation Principle: Interfaces específicas y enfocadas
-Dependency Inversion Principle: Dependencia de abstracciones, no implementaciones
+Bajo - mínima dependencia entre módulos
 
-Otros Principios Aplicados:
+---
 
-DRY (Don't Repeat Yourself): Código reutilizable en utils y components
-KISS (Keep It Simple): Implementaciones simples y claras
-SoC (Separation of Concerns): Separación clara de responsabilidades entre capas
-Alta Cohesión: Componentes fuertemente relacionados dentro de cada módulo
-Bajo Acoplamiento: Mínima dependencia entre módulos diferentes
+## Notas
 
-MÓDULOS PRINCIPALES
+### Almacenamiento
 
-Models:
+Todos los datos se almacenan en **localStorage** bajo la clave **travelsplit_viajes**. Los datos persisten entre sesiones hasta que el usuario los elimine o limpie el caché.
 
-Travel.js representa un viaje completo con participantes y gastos. Incluye métodos para agregar participantes, agregar gastos, calcular balances individuales y obtener estadísticas del viaje.
+### Limitaciones
 
-Expense.js representa un gasto individual con descripción, monto, pagador y participantes. Incluye métodos para calcular el monto por persona y validar los datos del gasto.
+LocalStorage tiene límite de 5-10MB por dominio. El sistema incluye verificaciones para detectar límites y limpiar datos antiguos si es necesario.
 
-Participant.js representa un participante del viaje. Incluye métodos para obtener iniciales, validar datos y comparar participantes.
+---
 
-Controllers:
+## Autor
 
-AppController.js es el controlador principal que inicializa la aplicación, configura las rutas del router y coordina los demás controladores.
+FedeJGM 
 
-WelcomeController.js gestiona la página de bienvenida inicial.
-
-LoginController.js gestiona el proceso de inicio de sesión con validaciones.
-
-RegisterController.js gestiona el registro de nuevos usuarios con validaciones en tiempo real.
-
-TravelController.js gestiona todas las operaciones relacionadas con viajes: creación, listado, visualización de detalles y unirse a viajes existentes.
-
-ExpenseController.js gestiona las operaciones de gastos: creación y validación de nuevos gastos dentro de un viaje.
-
-Services:
-
-StorageService.js abstrae el acceso a localStorage proporcionando operaciones CRUD sobre los viajes. Maneja serialización, deserialización y verificaciones de límites.
-
-ValidationService.js centraliza todas las validaciones de la aplicación. Valida viajes, gastos, participantes, emails y contraseñas según reglas de negocio definidas.
-
-Router:
-
-Router.js es el sistema de routing basado en hash que soporta parámetros dinámicos, hooks de navegación y manejo de páginas 404.
-
-Utils:
-
-navigationHelper.js gestiona la navegación dinámica del header según la ruta actual mostrando diferentes botones en welcome, login/registro y páginas principales.
-
-FLUJO DE DATOS
-
-El flujo de datos en TravelSplit sigue el patrón MVC estricto:
-
-El usuario interactúa con una Vista. La Vista dispara un evento. El Controller captura el evento. El Controller valida los datos usando ValidationService. El Controller crea o modifica un Model. El Controller persiste los cambios usando StorageService. El Controller actualiza la Vista con los nuevos datos. La Vista se re-renderiza mostrando el estado actualizado.
-
-NAVEGACIÓN
-
-Rutas Disponibles:
-
-La ruta raíz con hash slash muestra la página de bienvenida con WelcomeView.
-La ruta hash login muestra el inicio de sesión con LoginView.
-La ruta hash registro muestra el registro de usuario con RegisterView.
-La ruta hash home muestra la página principal con HomeView.
-La ruta hash crear-viaje muestra el formulario para crear viaje con CreateTravelView.
-La ruta hash mis-viajes muestra el listado de viajes con TravelListView.
-La ruta hash viaje seguido del id muestra los detalles del viaje con TravelDetailView.
-La ruta hash viaje id nuevo-gasto muestra el formulario de nuevo gasto con ExpenseFormView.
-La ruta hash unirse-viaje permite unirse a un viaje existente con JoinTravelView.
-
-Características del Router:
-
-Basado en hash para compatibilidad con hosting estático. Soporte para parámetros dinámicos en rutas. Hooks beforeEach y afterEach para lógica pre/post navegación. Manejo automático de páginas no encontradas (404). Interceptación de enlaces para navegación sin recarga. Navegación dinámica del header según la ruta.
-
-Flujo de Navegación:
-
-Usuario accede a la raíz y ve WelcomeView. Hace clic en Iniciar Sesión y es redirigido a login. Hace clic en Crea una cuenta y es redirigido a registro. Después de login o registro exitoso es redirigido a home. En home tiene disponible la navegación completa.
-
-PERSISTENCIA
-
-Almacenamiento en localStorage:
-
-Todos los datos se almacenan localmente en el navegador usando localStorage bajo la clave travelsplit_viajes. Los datos persisten entre sesiones hasta que el usuario los elimine o limpie el caché del navegador.
-
-Estructura de Datos:
-
-Cada viaje se almacena como un objeto JSON con id que es un código único alfanumérico, nombre como nombre descriptivo del viaje, divisa con el código ISO de la divisa como USD EUR MXN etc, participantes como array de nombres de participantes, gastos como array de objetos gasto con descripción monto pagador y participantes, totalGastado como suma total de todos los gastos y fechaCreacion como timestamp ISO de creación.
-
-Limitaciones:
-
-localStorage tiene un límite aproximado de 5 a 10MB por dominio. El sistema incluye verificaciones para detectar cuando se alcanza este límite y puede limpiar datos antiguos automáticamente si es necesario.
-
-VALIDACIONES
-
-Reglas de Negocio para Autenticación:
-
-Email debe tener formato válido de correo electrónico con el patrón nombre arroba dominio punto extensión. Es un campo obligatorio. Tiene validación en tiempo real con feedback visual.
-
-Contraseña debe tener mínimo 8 caracteres. Debe incluir al menos 1 letra mayúscula de A a Z. Debe incluir al menos 1 letra minúscula de a a z. Debe incluir al menos 1 número de 0 a 9. Tiene validación en tiempo real con indicadores visuales. Proporciona feedback inmediato de requisitos cumplidos con checks verdes.
-
-Reglas de Negocio para Viajes:
-
-Nombre debe tener entre 3 y 50 caracteres. Divisa debe ser una de las soportadas oficialmente. Debe haber al menos 1 participante con un máximo de 50. No puede haber participantes duplicados. El código del viaje debe ser único.
-
-Reglas de Negocio para Gastos:
-
-Descripción debe tener entre 3 y 100 caracteres. Monto debe ser mayor a 0 y menor a 1000000. El pagador debe ser un participante existente del viaje. Debe haber al menos 1 participante incluido en el gasto. La fecha se asigna automáticamente al momento de creación.
-
-Reglas de Negocio para Participantes:
-
-Nombre debe tener entre 2 y 30 caracteres. Solo se permiten letras, espacios y guiones. No se permiten caracteres especiales ni números. Los nombres se normalizan eliminando espacios extras. No se pueden eliminar participantes con gastos asociados.
-
-Feedback Visual de Validaciones:
-
-Bordes verdes indican campo válido. Bordes rojos indican campo con error. Checks verdes indican requisitos de contraseña cumplidos. Círculos grises indican requisitos pendientes. Mensajes de error aparecen debajo de cada campo.
+---
