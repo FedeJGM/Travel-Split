@@ -2,6 +2,8 @@
 
 Aplicación web para organizar y dividir gastos de viajes entre grupos de amigos y familiares.
 
+![image alt](https://github.com/FedeJGM/Travel-Split/blob/670bc2133fd2c1cffa42c7f753475060b7327be9/assets/img/pag-inicio.png)
+
 TravelSplit es una **Single Page Application (SPA)** construida con JavaScript puro siguiendo el patrón **Model-View-Controller (MVC)**, además este contiene e implementa **Principios del Desarrollo del Software**. Permite crear viajes, registrar gastos compartidos y calcular automáticamente quién debe a quién.
 
 ---
